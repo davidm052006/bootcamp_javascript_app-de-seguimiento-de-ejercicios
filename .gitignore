@@ -1,0 +1,32 @@
+# Archivos de Live Server
+live-server-sample.html
+.vscode/settings.json
+
+# Scripts de auto-commit (opcional, descomenta si no quieres subirlos)
+# auto-commit.sh
+# auto-commit.bat
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Carpetas de dependencias (si usas Node.js en el futuro)
+node_modules/
+package-lock.json
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de backup
+*.bak
+*.backup

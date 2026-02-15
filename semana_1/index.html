@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💪 Seguimiento de Ejercicios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Encabezado -->
+        <header class="header">
+            <h1>Nuestras rutinas</h1>
+            <p class="subtitle">Seguimiento diario de tu progreso fitness</p>
+        </header>
+
+        <!-- Tarjeta de información principal con acordeón -->
+        <div class="card main-card">
+            <div class="card-header">
+                <h2 id="routine-name">Cargando...</h2>
+                <span class="badge" id="routine-code">---</span>
+            </div>
+            
+            <p class="description" id="routine-description">...</p>
+            
+            <!-- Información detallada -->
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">📍 Ubicación:</span>
+                    <span id="location">---</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">⏱️ Duración:</span>
+                    <span id="duration">---</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">🔥 Nivel:</span>
+                    <span id="difficulty">---</span>
+                </div>
+            </div>
+
+            <!-- Botones de acordeón -->
+            <div class="accordion-buttons">
+                <button class="accordion-btn" id="toggle-exercises">
+                    📋 Ver Ejercicios <span class="arrow">▼</span>
+                </button>
+                <button class="accordion-btn" id="toggle-stats-accordion">
+                    📊 Ver Estadísticas <span class="arrow">▼</span>
+                </button>
+            </div>
+
+            <!-- Sección de ejercicios (acordeón) -->
+            <div class="accordion-content" id="exercises-accordion">
+                <div class="accordion-inner">
+                    <h3>📋 Ejercicios de la Rutina</h3>
+                    <div id="exercises-list" class="exercises-container">
+                        <!-- Los ejercicios se cargarán aquí con JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de estadísticas (acordeón) -->
+            <div class="accordion-content" id="stats-accordion">
+                <div class="accordion-inner stats-inner">
+                    <h3>📊 Estadísticas</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-value" id="total-exercises">0</div>
+                            <div class="stat-label">Ejercicios</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="avg-intensity">0%</div>
+                            <div class="stat-label">Intensidad Promedio</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="total-calories">0</div>
+                            <div class="stat-label">Calorías Estimadas</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="completion-rate">0%</div>
+                            <div class="stat-label">Tasa de Finalización</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="actions">
+            <button class="btn btn-primary" id="toggle-theme">
+                🌙 Cambiar Tema
+            </button>
+            <button class="btn btn-secondary" id="copy-info">
+                📋 Copiar Info
+            </button>
+        </div>
+
+        <!-- Notificación Toast -->
+        <div class="toast" id="toast">
+            <span id="toast-message">Mensaje</span>
+        </div>
+      </div>
+
+    <!-- 👇 AQUÍ SE LLAMA EL ARCHIVO JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>

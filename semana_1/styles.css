@@ -1,0 +1,524 @@
+/* ========================================
+   VARIABLES CSS (colores y estilos)
+   ======================================== */
+:root {
+    /* Tema Claro */
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --accent-color: #5a67d8;
+    --accent-hover: #5a67d8;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --success-color: #48bb78;
+    --warning-color: #ed8936;
+}
+
+/* Tema Oscuro */
+body.dark-theme {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #a0aec0;
+    --border-color: #4a5568;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fondo suave y neutral - gris claro */
+    background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+    color: var(--text-primary);
+    line-height: 1.6;
+    /* Transiciones suaves para el cambio de tema */
+    transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Tema Oscuro: fondo suave gris oscuro */
+body.dark-theme {
+    background: linear-gradient(to bottom, #1e293b, #0f172a);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   ENCABEZADO
+   ======================================== */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    /* Modo claro: tonos pastel suaves */
+    background: linear-gradient(135deg, #c4b5fd, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+/* Modo oscuro: amarillo → naranja (igual que la tarjeta) */
+body.dark-theme .header h1 {
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .subtitle {
+    color: #94a3b8;
+}
+
+/* ========================================
+   TARJETAS
+   ======================================== */
+.card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    /* Transición suave para todos los cambios */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-card {
+    overflow: hidden;
+    /* Modo claro: tonos pastel suaves (menos agresivo) */
+    background: linear-gradient(135deg, #c4b5fd, #93c5fd);
+    /* Transición suave para el cambio de tema */
+    transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+}
+
+/* Modo oscuro: amarillo → naranja VIBRANTE (destaca sobre fondo neutro) */
+body.dark-theme .main-card {
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-header h2 {
+    color: #1e293b;
+    font-size: 1.8rem;
+    text-shadow: none;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .card-header h2 {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+    background: rgba(30, 41, 59, 0.15);
+    color: #1e293b;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .badge {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.description {
+    color: #334155;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .description {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* ========================================
+   BOTONES DE ACORDEÓN
+   ======================================== */
+.accordion-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.accordion-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 20px;
+    background: rgba(30, 41, 59, 0.1);
+    color: #1e293b;
+    border: 2px solid rgba(30, 41, 59, 0.2);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.accordion-btn:hover {
+    background: rgba(30, 41, 59, 0.15);
+    border-color: rgba(30, 41, 59, 0.3);
+    transform: translateY(-2px);
+}
+
+body.dark-theme .accordion-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.dark-theme .accordion-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.accordion-btn .arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.accordion-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   CONTENIDO DEL ACORDEÓN
+   ======================================== */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-content.active {
+    max-height: 2000px;
+}
+
+.accordion-inner {
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+    margin-top: 20px;
+}
+
+.accordion-inner h3 {
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .accordion-inner h3 {
+    color: white;
+}
+
+/* ========================================
+   GRID DE INFORMACIÓN
+   ======================================== */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.9rem;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.info-item span:last-child {
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-theme .info-item span:last-child {
+    color: white;
+}
+
+/* ========================================
+   LISTA DE EJERCICIOS
+   ======================================== */
+.exercises-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.exercise-item {
+    background: var(--bg-primary);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exercise-item:hover {
+    transform: translateX(5px);
+    border-left-color: var(--success-color);
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.exercise-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.exercise-type {
+    background: var(--warning-color);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.intensity-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.intensity-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--success-color), var(--accent-color));
+    transition: width 0.5s ease;
+    border-radius: 4px;
+}
+
+.intensity-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ========================================
+   ESTADÍSTICAS
+   ======================================== */
+.stats-inner {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 0;
+    border-top: none;
+}
+
+.stats-inner h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    color: white;
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+.actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-secondary {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #38a169;
+}
+
+.btn-accent {
+    background: var(--warning-color);
+    color: white;
+}
+
+.btn-accent:hover {
+    background: #dd6b20;
+}
+
+/* ========================================
+   NOTIFICACIÓN TOAST
+   ======================================== */
+.toast {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--accent-color);
+    transition: bottom 0.4s ease;
+    z-index: 1000;
+    font-weight: 600;
+}
+
+.toast.show {
+    bottom: 30px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .accordion-buttons {
+        flex-direction: column;
+    }
+    
+    .accordion-btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
