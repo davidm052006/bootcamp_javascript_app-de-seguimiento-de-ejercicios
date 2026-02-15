@@ -6,6 +6,9 @@ live-server-sample.html
 # auto-commit.sh
 # auto-commit.bat
 
+# Imágenes duplicadas (opcional, descomenta si solo quieres la de assets/)
+# semana_1/image.jpg
+
 # Archivos del sistema operativo
 .DS_Store
 Thumbs.db
