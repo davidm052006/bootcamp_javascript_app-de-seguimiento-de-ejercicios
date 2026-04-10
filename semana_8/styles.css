@@ -1,4 +1,4 @@
-:root{--bg:#f6f7fb;--card:#fff;--accent:#4CAF50;--muted:#666}
+:root{--bg:#f6f7fb;--card:#cea7a7;--accent:#4ed853;--muted:#666}
 *{box-sizing:border-box}
 body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:var(--bg);color:#222;margin:0;padding:2rem}
 .wrap{max-width:900px;margin:0 auto}
