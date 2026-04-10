@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Rutinas - FitWell</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Gestor de Rutinas de Ejercicios</h1>
+            <p class="subtitle">Crea, edita y organiza tus entrenamientos</p>
+        </header>
+
+        <!-- Estadísticas -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="total-routines">0</div>
+                <div class="stat-label">Total Rutinas</div>
+            </div>
+            <div class="stat-card stat-active">
+                <div class="stat-value" id="active-routines">0</div>
+                <div class="stat-label">Activas</div>
+            </div>
+            <div class="stat-card stat-inactive">
+                <div class="stat-value" id="inactive-routines">0</div>
+                <div class="stat-label">Inactivas</div>
+            </div>
+        </div>
+
+        <!-- Formulario para crear/editar rutina -->
+        <div class="card form-card">
+            <h2 id="form-title">Crear Nueva Rutina</h2>
+            <form id="routine-form">
+                <div class="form-group">
+                    <label for="routine-name">Nombre de la Rutina *</label>
+                    <input type="text" id="routine-name" placeholder="Ej: Rutina Full Body" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="routine-category">Categoría *</label>
+                        <select id="routine-category" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="fuerza">Fuerza</option>
+                            <option value="cardio">Cardio</option>
+                            <option value="flexibilidad">Flexibilidad</option>
+                            <option value="hiit">HIIT</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="routine-level">Nivel *</label>
+                        <select id="routine-level" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="principiante">Principiante</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="routine-duration">Duración (minutos) *</label>
+                    <input type="number" id="routine-duration" min="5" max="180" placeholder="60" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="routine-description">Descripción</label>
+                    <textarea id="routine-description" rows="3" placeholder="Describe tu rutina..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        Crear Rutina
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Filtros y búsqueda -->
+        <div class="card filters-card">
+            <div class="filters-row">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar rutinas...">
+                </div>
+
+                <div class="filter-group">
+                    <label>Estado:</label>
+                    <select id="filter-status">
+                        <option value="all">Todas</option>
+                        <option value="active">Activas</option>
+                        <option value="inactive">Inactivas</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Categoría:</label>
+                    <select id="filter-category">
+                        <option value="all">Todas</option>
+                        <option value="fuerza">Fuerza</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="flexibilidad">Flexibilidad</option>
+                        <option value="hiit">HIIT</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Nivel:</label>
+                    <select id="filter-level">
+                        <option value="all">Todos</option>
+                        <option value="principiante">Principiante</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de rutinas -->
+        <div class="routines-container" id="routines-list">
+            <!-- Las rutinas se renderizarán aquí -->
+        </div>
+
+        <!-- Mensaje cuando no hay rutinas -->
+        <div class="empty-state" id="empty-state">
+            <p>No hay rutinas que mostrar</p>
+            <p class="empty-subtitle">Crea tu primera rutina usando el formulario de arriba</p>
+        </div>
+
+        <!-- Botón de tema -->
+        <button class="theme-toggle" id="theme-toggle">
+            🌙
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

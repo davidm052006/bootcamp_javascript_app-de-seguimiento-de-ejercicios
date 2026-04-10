@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitWell — Week 6 Form Validator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Register — FitWell</h1>
+    <p class="lead">Formulario con validación en tiempo real y sanitización (ES2023)</p>
+
+    <form id="register-form" novalidate>
+      <div class="grid">
+        <label>Full name
+          <input id="name" name="name" type="text" placeholder="John Doe" required />
+          <small class="msg" data-for="name"></small>
+        </label>
+
+        <label>Email
+          <input id="email" name="email" type="email" placeholder="john@example.com" required />
+          <small class="msg" data-for="email"></small>
+        </label>
+
+        <label>Phone (international)
+          <input id="phone" name="phone" type="tel" placeholder="+34123456789" />
+          <small class="msg" data-for="phone"></small>
+        </label>
+
+        <label>Birthdate
+          <input id="birthdate" name="birthdate" type="date" />
+          <small class="msg" data-for="birthdate"></small>
+        </label>
+
+        <label>Member ID
+          <input id="memberId" name="memberId" type="text" placeholder="MBR1234" />
+          <small class="msg" data-for="memberId"></small>
+        </label>
+
+        <label>Postal Code
+          <input id="postal" name="postal" type="text" placeholder="08001" />
+          <small class="msg" data-for="postal"></small>
+        </label>
+
+        <label>Profile URL
+          <input id="profileUrl" name="profileUrl" type="url" placeholder="https://profile.example.com/user" />
+          <small class="msg" data-for="profileUrl"></small>
+        </label>
+
+        <label>Password
+          <input id="password" name="password" type="password" placeholder="Minimum 8 chars" required />
+          <div id="pw-meter" class="pw-meter"><div class="fill" style="width:0%"></div></div>
+          <small class="msg" data-for="password"></small>
+        </label>
+
+        <label>Confirm password
+          <input id="confirm" name="confirm" type="password" placeholder="Repeat password" required />
+          <small class="msg" data-for="confirm"></small>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="submit" type="submit">Register</button>
+        <button id="reset" type="button" class="secondary">Clear</button>
+      </div>
+    </form>
+
+    <section class="notes card">
+      <h3>Notes</h3>
+      <ul>
+        <li>Validations enforced with RegExp and real-time feedback.</li>
+        <li>Inputs are sanitized before being used or displayed.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="starter/script.js"></script>
+</body>
+</html>

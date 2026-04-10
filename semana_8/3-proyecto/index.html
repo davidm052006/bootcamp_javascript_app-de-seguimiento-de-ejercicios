@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitWell — Week 8 Paginator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Lazy Paginator — Week 8</h1>
+    <p class="lead">Generadores y paginación lazy (function*, yield)</p>
+
+    <section class="card controls">
+      <label>Items per page:
+        <select id="items-per-page"><option>5</option><option selected>10</option><option>20</option></select>
+      </label>
+
+      <div class="nav">
+        <button id="prev">Previous</button>
+        <span id="page-indicator">Page 1 / 10</span>
+        <button id="next">Next</button>
+      </div>
+
+      <label>Go to page:
+        <input id="goto" type="number" min="1" style="width:80px" />
+        <button id="btn-goto">Go</button>
+      </label>
+    </section>
+
+    <section class="card list">
+      <ul id="items-list"></ul>
+    </section>
+
+    <section class="card info">
+      <h3>Info / Logs</h3>
+      <div id="info"></div>
+    </section>
+  </main>
+
+  <script type="module" src="starter/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+:root{--bg:#f6f7fb;--card:#fff;--accent:#4CAF50;--danger:#f44336;--muted:#666}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:var(--bg);color:#222;margin:0;padding:2rem}
+.container{max-width:920px;margin:0 auto}
+h1{margin:0 0 .25rem}
+.lead{margin:.25rem 0 1rem;color:var(--muted)}
+.card{background:var(--card);padding:1rem;border-radius:8px;border:1px solid #e6e9ef}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+label{display:block;font-weight:600}
+input{width:100%;padding:.5rem;border:1px solid #ddd;border-radius:6px;margin-top:.35rem}
+.msg{display:block;height:1.1rem;margin-top:.25rem;color:var(--danger);font-size:.85rem}
+.valid{border-color:var(--accent)}
+.invalid{border-color:var(--danger)}
+.actions{margin-top:1rem;display:flex;gap:.5rem}
+button{background:var(--accent);color:#fff;padding:.6rem .8rem;border-radius:6px;border:0;cursor:pointer}
+button.secondary{background:#2196F3}
+.pw-meter{height:8px;background:#eee;border-radius:6px;margin-top:.4rem;overflow:hidden}
+.pw-meter .fill{height:100%;background:linear-gradient(90deg,#ff6b6b,#ffb86b,#7be495);width:0%}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}

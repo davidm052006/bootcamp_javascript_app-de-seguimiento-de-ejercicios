@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitWell — Week 5 Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>FitWell — Week 5</h1>
+    <p class="subtitle">Dashboard: statistics, rankings and temporal trends (ES2023)</p>
+  </header>
+
+  <main>
+    <aside class="controls">
+      <h2>Filters</h2>
+      <label>Start date
+        <input id="start-date" type="date" />
+      </label>
+      <label>End date
+        <input id="end-date" type="date" />
+      </label>
+      <label>Min duration (min)
+        <input id="min-duration" type="number" min="0" />
+      </label>
+      <div class="actions">
+        <button id="btn-apply">Apply</button>
+        <button id="btn-reset" class="secondary">Reset</button>
+      </div>
+    </aside>
+
+    <section class="dashboard">
+      <div id="stats" class="card"></div>
+
+      <div id="ranking" class="card">
+        <h3>Ranking - Top Categories</h3>
+        <ol id="ranking-list"></ol>
+      </div>
+
+      <div id="grouping" class="card">
+        <h3>Temporal Grouping</h3>
+        <div id="grouping-list"></div>
+      </div>
+
+      <div id="extras" class="card">
+        <h3>Extras</h3>
+        <div id="last-found"></div>
+        <div id="immutability-sample"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Exercises sample data (ES2023 methods used in starter/script.js)</small>
+  </footer>
+
+  <script type="module" src="starter/script.js"></script>
+</body>
+</html>

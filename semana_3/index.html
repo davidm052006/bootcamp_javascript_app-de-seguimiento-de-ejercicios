@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWell - Sistema de Seguimiento de Ejercicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FitWell</h1>
+        <div id="stats">
+            <!-- Estadísticas del sistema -->
+        </div>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Crear Ejercicio</h2>
+            <form id="exercise-form">
+                <!-- Formulario para crear ejercicios -->
+            </form>
+        </section>
+
+        <section id="filters-section">
+            <h2>Filtros</h2>
+            <div id="filters">
+                <!-- Controles de filtrado -->
+            </div>
+        </section>
+
+        <section id="list-section">
+            <h2>Lista de Ejercicios</h2>
+            <div id="exercise-list">
+                <!-- Lista de ejercicios -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para detalles -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Detalles del ejercicio -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/models/BaseExercise.js"></script>
+    <script src="js/models/CardioExercise.js"></script>
+    <script src="js/models/StrengthExercise.js"></script>
+    <script src="js/models/FlexibilityExercise.js"></script>
+    <script src="js/models/User.js"></script>
+    <script src="js/models/Trainer.js"></script>
+    <script src="js/models/Member.js"></script>
+    <script src="js/models/Equipment.js"></script>
+    <script src="js/models/Routine.js"></script>
+    <script src="js/models/WorkoutSession.js"></script>
+    <script src="js/models/FitnessSystem.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

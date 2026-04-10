@@ -1,0 +1,21 @@
+:root{--bg:#f5f7fb;--card:#fff;--accent:#4CAF50;--muted:#666;--danger:#f44336}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:var(--bg);color:#222;margin:0;padding:2rem}
+.wrap{max-width:1100px;margin:0 auto}
+h1{margin:0}
+.lead{color:var(--muted);margin-bottom:1rem}
+.card{background:var(--card);padding:1rem;border-radius:8px;border:1px solid #e6e9ef;margin-bottom:1rem}
+.form label{display:block;margin-bottom:.6rem}
+input{padding:.45rem;border:1px solid #ddd;border-radius:6px;width:100%}
+.actions{display:flex;gap:.5rem;margin-top:.6rem}
+button{background:var(--accent);color:#fff;padding:.5rem .7rem;border-radius:6px;border:0;cursor:pointer}
+button.secondary{background:#2196F3}
+.lists{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+#entities-list{list-style:none;padding-left:0}
+#entities-list li{padding:.4rem;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center}
+.cat-ops{display:flex;gap:.5rem;margin-top:.5rem}
+#categories-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.chip{background:#f0f6f3;padding:.25rem .5rem;border-radius:999px;border:1px solid #e0f0e8}
+.status .item{padding:.25rem;border-bottom:1px dashed #eee}
+.logs pre{height:160px;overflow:auto;background:#0f1724;color:#cbd5e1;padding:.6rem;border-radius:6px}
+@media(max-width:900px){.lists{grid-template-columns:1fr}}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWell - Sistema de Seguimiento de Ejercicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FitWell</h1>
+        <div id="stats">
+            <!-- Estadísticas del sistema -->
+        </div>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Crear / Editar Ejercicio</h2>
+            <form id="exercise-form">
+                <input type="hidden" id="exercise-id" />
+                <label for="exercise-name">Name</label>
+                <input id="exercise-name" type="text" placeholder="e.g. Running" required />
+
+                <label for="exercise-type">Type</label>
+                <select id="exercise-type">
+                    <option value="cardio">Cardio</option>
+                    <option value="strength">Strength</option>
+                    <option value="flexibility">Flexibility</option>
+                </select>
+
+                <label for="exercise-duration">Duration (min)</label>
+                <input id="exercise-duration" type="number" min="0" />
+
+                <label for="exercise-intensity">Intensity / Notes</label>
+                <input id="exercise-intensity" type="text" placeholder="e.g. moderate / 3x12" />
+
+                <label for="exercise-category">Category</label>
+                <input id="exercise-category" type="text" placeholder="e.g. cardio, chest, mobility" />
+
+                <label for="exercise-desc">Description</label>
+                <textarea id="exercise-desc" rows="3" placeholder="Optional description"></textarea>
+
+                <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+                    <button type="submit">Save</button>
+                    <button type="button" id="btn-clear" class="secondary">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="filters-section">
+            <h2>Filters</h2>
+            <div id="filters">
+                <label for="filter-type">Type</label>
+                <select id="filter-type">
+                    <option value="all">All</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="strength">Strength</option>
+                    <option value="flexibility">Flexibility</option>
+                </select>
+
+                <label for="filter-category">Category</label>
+                <input id="filter-category" type="text" placeholder="Filter by category" />
+
+                <label for="search-input">Search</label>
+                <input id="search-input" type="text" placeholder="Search by name" />
+
+                <div style="margin-top:0.5rem; display:flex; gap:0.5rem;">
+                    <button id="btn-reports" type="button" class="secondary">Reports</button>
+                    <button id="btn-export" type="button">Export</button>
+                    <button id="btn-import" type="button" class="secondary">Import</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="list-section">
+            <h2>Lista de Ejercicios</h2>
+            <div id="exercise-list">
+                <!-- Lista de ejercicios -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para detalles -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Detalles del ejercicio -->
+            </div>
+        </div>
+    </div>
+
+    <!-- App (ES Modules) -->
+    <script type="module" src="starter/main.js"></script>
+</body>
+</html>

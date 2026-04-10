@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FitWell — Week 7 Collections</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Entities Manager — Week 7</h1>
+    <p class="lead">Uso de Map, Set, WeakMap y WeakSet aplicado al dominio FitWell</p>
+
+    <section class="card form">
+      <h2>Register entity</h2>
+      <label>Name <input id="ent-name" placeholder="e.g. Yoga Session" /></label>
+      <label>Categories (comma separated) <input id="ent-cats" placeholder="cardio,mobility" /></label>
+      <div class="actions">
+        <button id="btn-add">Add entity</button>
+        <button id="btn-clear" class="secondary">Clear</button>
+      </div>
+    </section>
+
+    <section class="card lists">
+      <div>
+        <h3>Entities</h3>
+        <ul id="entities-list"></ul>
+      </div>
+
+      <div>
+        <h3>Categories</h3>
+        <div id="categories-list"></div>
+        <div class="cat-ops">
+          <input id="set-a" placeholder="Category A" />
+          <input id="set-b" placeholder="Category B" />
+          <button id="btn-union">Union (A ∪ B)</button>
+          <button id="btn-inter">Intersection (A ∩ B)</button>
+        </div>
+        <div id="cat-result"></div>
+      </div>
+    </section>
+
+    <section class="card status">
+      <h3>Active states (WeakSet)</h3>
+      <p>Active entities are tracked by reference in a WeakSet (no memory leaks).</p>
+      <div id="active-list"></div>
+      <h3>Cache (WeakMap)</h3>
+      <p>Computed values per entity are cached with WeakMap (garbage collected with objects).</p>
+      <div id="cache-list"></div>
+    </section>
+
+    <section class="card logs">
+      <h3>Console / Logs</h3>
+      <pre id="log"></pre>
+    </section>
+  </main>
+
+  <script type="module" src="starter/script.js"></script>
+</body>
+</html>
