@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWell - Sistema de Seguimiento de Ejercicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FitWell</h1>
+        <div id="stats">
+            <!-- Estadísticas del sistema -->
+        </div>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Crear Ejercicio</h2>
+            <form id="exercise-form">
+                <div class="form-row">
+                    <label for="exercise-name">Nombre</label>
+                    <input type="text" id="exercise-name" required minlength="3" placeholder="Ej. Correr">
+                </div>
+                <div class="form-row">
+                    <label for="exercise-type">Tipo</label>
+                    <select id="exercise-type" required>
+                        <option value="cardio">Cardio</option>
+                        <option value="strength">Fuerza</option>
+                        <option value="flexibility">Flexibilidad</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="exercise-duration">Duración (min)</label>
+                    <input type="number" id="exercise-duration" required min="1" value="20">
+                </div>
+                <div class="form-row">
+                    <label for="exercise-desc">Descripción</label>
+                    <textarea id="exercise-desc" rows="2" required placeholder="Descripción breve"></textarea>
+                </div>
+
+                <fieldset id="fields-cardio" class="type-fields">
+                    <div class="form-row">
+                        <label for="cardio-distance">Distancia (km)</label>
+                        <input type="number" id="cardio-distance" min="0" step="0.1" value="0">
+                    </div>
+                    <div class="form-row">
+                        <label for="cardio-intensity">Intensidad</label>
+                        <select id="cardio-intensity">
+                            <option value="low">Baja</option>
+                            <option value="medium" selected>Media</option>
+                            <option value="high">Alta</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset id="fields-strength" class="type-fields" hidden>
+                    <div class="form-row">
+                        <label for="strength-sets">Series</label>
+                        <input type="number" id="strength-sets" min="1" value="3">
+                    </div>
+                    <div class="form-row">
+                        <label for="strength-reps">Repeticiones</label>
+                        <input type="number" id="strength-reps" min="1" value="12">
+                    </div>
+                    <div class="form-row">
+                        <label for="strength-weight">Peso (kg)</label>
+                        <input type="number" id="strength-weight" min="0" step="0.5" value="20">
+                    </div>
+                    <div class="form-row">
+                        <label for="strength-muscle">Grupo muscular</label>
+                        <select id="strength-muscle">
+                            <option value="chest">Pecho</option>
+                            <option value="back">Espalda</option>
+                            <option value="legs">Piernas</option>
+                            <option value="arms">Brazos</option>
+                            <option value="shoulders">Hombros</option>
+                            <option value="core">Core</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset id="fields-flexibility" class="type-fields" hidden>
+                    <div class="form-row">
+                        <label for="flex-holdtime">Tiempo de sostén (s)</label>
+                        <input type="number" id="flex-holdtime" min="1" value="30">
+                    </div>
+                    <div class="form-row">
+                        <label for="flex-repetitions">Repeticiones</label>
+                        <input type="number" id="flex-repetitions" min="1" value="3">
+                    </div>
+                    <div class="form-row">
+                        <label for="flex-area">Área objetivo</label>
+                        <select id="flex-area">
+                            <option value="upper">Tren superior</option>
+                            <option value="lower">Tren inferior</option>
+                            <option value="full-body">Cuerpo completo</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="flex-difficulty">Dificultad</label>
+                        <select id="flex-difficulty">
+                            <option value="beginner">Principiante</option>
+                            <option value="intermediate">Intermedio</option>
+                            <option value="advanced">Avanzado</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Agregar ejercicio</button>
+            </form>
+        </section>
+
+        <section id="filters-section">
+            <h2>Filtros</h2>
+            <div id="filters">
+                <label for="filter-type">Tipo</label>
+                <select id="filter-type">
+                    <option value="">Todos</option>
+                    <option value="CardioExercise">Cardio</option>
+                    <option value="StrengthExercise">Fuerza</option>
+                    <option value="FlexibilityExercise">Flexibilidad</option>
+                </select>
+
+                <label for="search-input">Buscar</label>
+                <input type="search" id="search-input" placeholder="Buscar por nombre...">
+            </div>
+        </section>
+
+        <section id="list-section">
+            <h2>Lista de Ejercicios</h2>
+            <div id="exercise-list">
+                <!-- Lista de ejercicios -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para detalles -->
+    <div id="details-modal" class="modal" hidden>
+        <div class="modal-content">
+            <span class="close" id="modal-close">&times;</span>
+            <div id="modal-body">
+                <!-- Detalles del ejercicio -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/models/BaseExercise.js"></script>
+    <script src="js/models/CardioExercise.js"></script>
+    <script src="js/models/StrengthExercise.js"></script>
+    <script src="js/models/FlexibilityExercise.js"></script>
+    <script src="js/models/Person.js"></script>
+    <script src="js/models/User.js"></script>
+    <script src="js/models/Trainer.js"></script>
+    <script src="js/models/Member.js"></script>
+    <script src="js/models/Equipment.js"></script>
+    <script src="js/models/Routine.js"></script>
+    <script src="js/models/WorkoutSession.js"></script>
+    <script src="js/models/FitnessSystem.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

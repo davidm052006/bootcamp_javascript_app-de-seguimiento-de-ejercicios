@@ -1,3 +1,6 @@
+# Graphify (salida local de análisis)
+graphify-out/
+
 # Archivos de Live Server
 live-server-sample.html
 .vscode/settings.json
